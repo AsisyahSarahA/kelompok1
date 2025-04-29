@@ -1,15 +1,43 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello word
-  </h1> 
+<body class="flex items-center justify-center min-h-screen bg-gray-900">
+  <div class="flex rounded-xl shadow-2xl w-full max-w-6xl bg-white overflow-hidden">
+    <!-- Left: Login Form -->
+    <div class="w-1/2 p-12 bg-white">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Login hire.</h2>
+      <form class="space-y-6">
+        <input type="email" placeholder="Email" class="w-full px-5 py-3 border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+        <input type="password" placeholder="Password" class="w-full px-5 py-3 border rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+        <div class="flex justify-between items-center text-sm text-gray-600">
+          <label><input type="checkbox" class="mr-2"> Remember me</label>
+          <a href="#" class="text-blue-500 hover:underline">Forgot password?</a>
+        </div>
+        <button class="w-full bg-blue-500 text-white py-3 text-lg rounded-lg hover:bg-blue-600 transition">Login</button>
+      </form>
+      <div class="mt-8 text-center text-gray-500 text-sm">
+        or use your account
+      </div>
+      <div class="flex justify-center mt-4 space-x-6">
+        <button><img src="https://img.icons8.com/ios-filled/28/facebook--v1.png" alt="Facebook"/></button>
+        <button><img src="https://img.icons8.com/ios-filled/28/google-logo.png" alt="Google"/></button>
+        <button><img src="https://img.icons8.com/ios-filled/28/github.png" alt="Github"/></button>
+      </div>
+    </div>
 
-  <p>riki </p>
-</body>A
+    <!-- Right: Register Prompt -->
+    <div class="w-1/2 bg-cover bg-center text-white flex items-center justify-center" style="background-image: url('https://source.unsplash.com/800x800/?travel,boat');">
+      <div class="bg-black bg-opacity-50 p-12 rounded-xl text-center">
+        <h2 class="text-4xl font-bold mb-6">Start your journey now</h2>
+        <p class="mb-6 text-lg">You don’t have an account yet, join us and start your journey.</p>
+        <button class="bg-white text-blue-500 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition">Register →</button>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
