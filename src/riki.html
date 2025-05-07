@@ -2,83 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login & Register</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .form-container {
-      display: none;
-    }
-    .form-container.active {
-      display: block;
-    }
-  </style>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-900">
-
-  <div class="w-full max-w-7xl p-10 bg-white rounded-2xl shadow-2xl">
-    <div class="flex flex-col md:flex-row">
-      
-      <!-- Left: Login Form -->
-      <div id="loginForm" class="w-full md:w-1/2 p-16 bg-white form-container active">
-        <h2 class="text-4xl font-bold text-gray-900 mb-10">Login here.</h2>
-        <form class="space-y-8">
-          <input type="email" placeholder="Email" class="w-full px-6 py-4 border rounded-xl text-xl focus:outline-none focus:ring-2 focus:ring-blue-400"/>
-          <input type="password" placeholder="Password" class="w-full px-6 py-4 border rounded-xl text-xl focus:outline-none focus:ring-2 focus:ring-blue-400"/>
-          
-          <div class="flex justify-between items-center text-base text-gray-600">
-            <label><input type="checkbox" class="mr-2"> Remember me</label>
-            <a href="#" class="text-blue-500 hover:underline">Forgot password?</a>
-          </div>
-          
-          <button class="w-full bg-blue-500 text-white py-4 text-xl rounded-xl hover:bg-blue-600 transition">Login</button>
-        </form>
-
-        <div class="mt-10 text-center text-gray-500 text-lg">
-          or use your account
-        </div>
-
-        <div class="flex justify-center mt-6 space-x-8">
-          <button aria-label="Login with Facebook"><img src="https://img.icons8.com/ios-filled/36/facebook--v1.png" alt="Facebook"/></button>
-          <button aria-label="Login with Google"><img src="https://img.icons8.com/ios-filled/36/google-logo.png" alt="Google"/></button>
-          <button aria-label="Login with GitHub"><img src="https://img.icons8.com/ios-filled/36/github.png" alt="Github"/></button>
-        </div>
-
-        <div class="mt-8 text-center">
-          <span class="text-gray-600">Don't have an account? </span>
-          <a href="&" onclick="showForm('register')" class="text-blue-500 hover:underline">Register here</a>
-        </div>
+<body class="min-h-screen bg-gray-100 flex items-center justify-center">
+  <div class="relative w-[800px] h-[500px] bg-white rounded-xl shadow-2xl overflow-hidden flex transition-all duration-500" id="container">
+    <!-- Login Form -->
+    <div class="w-1/2 p-10 flex flex-col justify-center space-y-4 bg-white transition-all duration-500" id="login-form">
+      <h1 class="text-2xl font-bold">Login here.</h1>
+      <input type="email" placeholder="Email" class="p-3 border rounded" />
+      <input type="password" placeholder="Password" class="p-3 border rounded" />
+      <div class="flex items-center justify-between text-sm">
+        <label><input type="checkbox" /> Remember me</label>
+        <a href="#" class="text-blue-500">Forgot password?</a>
       </div>
-
-      <!-- Right: Register Form -->
-      <div id="registerForm" class="w-full md:w-1/2 bg-cover bg-center text-white flex items-center justify-center form-container">
-        <div class="bg-black bg-opacity-60 p-16 rounded-2xl text-center">
-          <h2 class="text-5xl font-bold mb-8">Start your journey now</h2>
-          <p class="mb-8 text-2xl">You don’t have an account yet? Join us and start your journey.</p>
-          <button class="bg-white text-blue-600 px-10 py-4 rounded-full text-xl font-semibold hover:bg-gray-100 transition">Register →</button>
-
-          <div class="mt-8 text-center">
-            <span class="text-gray-600">Already have an account? </span>
-            <a href="#" onclick="showForm('login')" class="text-blue-500 hover:underline">Login here</a>
-          </div>
-        </div>
+      <button class="bg-cyan-500 text-white py-2 rounded hover:bg-cyan-600">Login</button>
+      <p class="text-center text-gray-500">or use your account</p>
+      <div class="flex justify-center gap-4">
+        <i class="lni lni-facebook-fill text-xl"></i>
+        <i class="lni lni-google text-xl"></i>
+        <i class="lni lni-linkedin-original text-xl"></i>
       </div>
+    </div>
 
+    <!-- Register Info Panel -->
+    <div class="w-1/2 bg-cyan-500 text-white p-10 flex flex-col justify-center items-center text-center transition-all duration-500" id="register-panel">
+      <h1 class="text-2xl font-bold">Start your journey now</h1>
+      <p class="mt-2">If you don't have an account yet, join us and start your journey.</p>
+      <button id="registerBtn" class="mt-6 border border-white px-6 py-2 rounded hover:bg-white hover:text-cyan-500 transition">Register</button>
     </div>
   </div>
 
-  <script>
-    // Function to switch between login and register forms
-    function showForm(form) {
-      if (form === 'login') {
-        document.getElementById('loginForm').classList.add('active');
-        document.getElementById('registerForm').classList.remove('active');
-      } else if (form === 'register') {
-        document.getElementById('registerForm').classList.add('active');
-        document.getElementById('loginForm').classList.remove('active');
-      }
-    }
-  </script>
+  <script src="script.js">
+    const container = document.getElementById('container');
+const loginForm = document.getElementById('login-form');
+const registerPanel = document.getElementById('register-panel');
+const registerBtn = document.getElementById('registerBtn');
 
+// Toggle to register panel (simulate slider)
+registerBtn.addEventListener('click', () => {
+  loginForm.classList.add('translate-x-full');
+  registerPanel.classList.add('-translate-x-full');
+});
+
+  </script>
 </body>
 </html>
