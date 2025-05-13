@@ -5,6 +5,7 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-cyan-300: oklch(86.5% 0.127 207.078);
@@ -13,6 +14,8 @@
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-semibold: 600;
@@ -211,23 +214,8 @@
   .h-\[50px\] {
     height: 50px;
   }
-  .h-\[100px\] {
-    height: 100px;
-  }
-  .max-w-\[3\.23rem\] {
-    max-width: 3.23rem;
-  }
   .max-w-\[50\%\] {
     max-width: 50%;
-  }
-  .max-w-\[50\] {
-    max-width: 50;
-  }
-  .max-w-\[rem\] {
-    max-width: rem;
-  }
-  .max-w-\[rm\] {
-    max-width: rm;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -240,15 +228,6 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
-  }
-  .rounded {
-    border-radius: 0.25rem;
-  }
-  .rounded-3xl {
-    border-radius: var(--radius-3xl);
-  }
-  .rounded-\[80\%\] {
-    border-radius: 80%;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -278,12 +257,25 @@
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
+  .p-100 {
+    padding: calc(var(--spacing) * 100);
+  }
   .text-center {
     text-align: center;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .font-serif {
+    font-family: var(--font-serif);
   }
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
